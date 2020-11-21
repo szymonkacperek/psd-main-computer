@@ -2,5 +2,31 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>qtquickcontrols2.conf</file>
+        <file>IsoParking.qml</file>
+        <file>IsoIconsBar.qml</file>
+        <file>IsoIconBlue.qml</file>
+        <file>IsoIconLights.qml</file>
+        <file>DashboardGaugeStyle.qml</file>
+        <file>IconGaugeStyle.qml</file>
+        <file>IsoItem.qml</file>
+        <file>dashicons/iso_grs_7000_4_0027.dat</file>
+        <file>dashicons/iso_grs_7000_4_0238.dat</file>
+        <file>dashicons/iso_grs_7000_4_0240.dat</file>
+        <file>dashicons/iso_grs_7000_4_0245.dat</file>
+        <file>dashicons/iso_grs_7000_4_0456.dat</file>
+        <file>dashicons/iso_grs_7000_4_0638.dat</file>
+        <file>dashicons/iso_grs_7000_4_0640.dat</file>
+        <file>dashicons/iso_grs_7000_4_1407.dat</file>
+        <file>dashicons/iso_grs_7000_4_1702.dat</file>
+        <file>dashicons/iso_grs_7000_4_2612.dat</file>
+        <file>imports/QtQuick/Studio/Components/ArcItem.qml</file>
+        <file>imports/QtQuick/Studio/Components/BorderItem.qml</file>
+        <file>imports/QtQuick/Studio/Components/FlipableItem.qml</file>
+        <file>imports/QtQuick/Studio/Components/IsoItem.qml</file>
+        <file>imports/QtQuick/Studio/Components/PieItem.qml</file>
+        <file>imports/QtQuick/Studio/Components/RectangleItem.qml</file>
+        <file>imports/QtQuick/Studio/Components/SvgPathItem.qml</file>
+        <file>imports/QtQuick/Studio/Components/TriangleItem.qml</file>
+        <file>TurnIndicator.qml</file>
     </qresource>
 </RCC>
