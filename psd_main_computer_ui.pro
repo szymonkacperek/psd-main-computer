@@ -1,4 +1,4 @@
-QT += quick
+QT += quick serialport core gui
 
 CONFIG += c++11
 
@@ -7,7 +7,8 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        serialport.cpp
 
 RESOURCES += qml.qrc
 
@@ -151,4 +152,7 @@ DISTFILES += \
     imports/QtQuick/Studio/Effects/designer/images/zoom-blur-24px.png \
     imports/QtQuick/Studio/Effects/designer/images/zoom-blur-24px@2x.png \
     imports/QtQuick/Studio/Effects/qmldir
+
+HEADERS += \
+    serialport.h
 
