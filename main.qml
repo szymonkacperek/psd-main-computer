@@ -2,13 +2,6 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Extras 1.4
 
-
-//import "file:///home/szymon/Documents/Workspace_Qt/psd_main_computer_ui/dashqmls"
-//import "file:///home/szymon/Documents/Workspace_Qt/psd_main_computer_ui/imports/QtQuick/Studio/Components"
-
-//import "./dashqmls"
-//import "./imports/QtQuick/Studio/Components"
-
 ApplicationWindow {
     width: 1920
     height: 1080
@@ -37,9 +30,9 @@ ApplicationWindow {
             y: 194
             width: 516
             height: 516
-            value: 50
+            value: serialPort.velocity
             enabled: false
-            stepSize: 1
+            stepSize: 0
             maximumValue: 200
             style: DashboardGaugeStyle {}
         }
