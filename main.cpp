@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQuickView>
 
 int main(int argc, char *argv[])
 {
@@ -16,5 +17,18 @@ int main(int argc, char *argv[])
     }, Qt::QueuedConnection);
     engine.load(url);
 
+
+
     return app.exec();
 }
+
+//int main(int argc, char **argv)
+//{
+//  QGuiApplication app(argc, argv);
+
+//  QQuickView* view{new QQuickView};
+//  view->setSource(QUrl("qrc:///main.qml"));
+//  view->show();
+
+//  return app.exec();
+//}
