@@ -7,10 +7,14 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        canopen_object_dict.cpp \
         main.cpp \
         serialport.cpp
 
 RESOURCES += qml.qrc
+
+INCLUDEPATH +=
+
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -154,5 +158,6 @@ DISTFILES += \
     imports/QtQuick/Studio/Effects/qmldir
 
 HEADERS += \
+    canopen_object_dict.h \
     serialport.h
 

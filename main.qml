@@ -2,11 +2,31 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Extras 1.4
 
+
+
+
 ApplicationWindow {
     width: 1920
     height: 1080
     visible: true
     title: qsTr("Dashboard gauges, PUT Solar Dynamics")
+
+    function leftIndicatorState(){
+            leftIndicator.on = true
+//        var turn_indicator_left = false
+
+        if (serialPort.lights === 1){
+//            turn_indicator_left = true
+            leftIndicator.on = true
+//            return 1
+
+        } else {
+//            turn_indicator_left = false
+            leftIndicator.on = false
+//            return 0
+        }
+
+    }
 
     Image {
         id: background
@@ -30,7 +50,7 @@ ApplicationWindow {
             y: 194
             width: 516
             height: 516
-            value: serialPort.velocity
+            value: qsTr(serialPort.velocity)
             enabled: false
             stepSize: 0
             maximumValue: 200
@@ -49,7 +69,7 @@ ApplicationWindow {
             style: IconGaugeStyle {
                 id: tempGaugeStyle
 
-//                icon: "qrc:/images/temperature-icon.png"
+                //                icon: "qrc:/images/temperature-icon.png"
                 maxWarningColor: Qt.rgba(0.5, 0, 0, 1)
 
                 tickmarkLabel: Text {
@@ -111,7 +131,7 @@ ApplicationWindow {
             style: IconGaugeStyle {
                 id: tempGaugeStyle1
 
-//                icon: "qrc:/images/temperature-icon.png"
+                //                icon: "qrc:/images/temperature-icon.png"
                 maxWarningColor: Qt.rgba(0.5, 0, 0, 1)
 
                 tickmarkLabel: Text {
@@ -122,7 +142,7 @@ ApplicationWindow {
                     //                    text: "POWER"
                 }
 
-        }
+            }
 
             Text {
                 id: text5
@@ -166,6 +186,15 @@ ApplicationWindow {
         }
 
         TurnIndicator{
+            function leftIndicatorState(){
+//                if (serialPort.lights === 1)
+//                    return true
+//                else
+//                    return false
+                return false
+
+            }
+
             id: leftIndicator
             x: 474
             y: 360
@@ -173,25 +202,23 @@ ApplicationWindow {
             height: 152
             direction: 3
             flashing: false
-            on: true
-
-
+            on: leftIndicatorState()
 
 
         }
 
-            TurnIndicator {
-                id: rightIndicator
-                x: 1308
-                y: 360
-                width: 142
-                height: 152
-                on: true
-                flashing: false
-                direction: 2
-            }
+        TurnIndicator {
+            id: rightIndicator
+            x: 1308
+            y: 360
+            width: 142
+            height: 152
+            on: true
+            flashing: false
+            direction: 2
+        }
 
-}
+    }
 
 
 }

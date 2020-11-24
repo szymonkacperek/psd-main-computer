@@ -1,35 +1,38 @@
 #ifndef SERIALPORT_H
 #define SERIALPORT_H
 
-#include <QObject>
 #include <QDebug>
+#include <QObject>
 #include <QSerialPort>
 #include <QSerialPortInfo>
 
+#include <canopen_object_dict.h>
 
-class SerialPort : public QObject
-{
-    Q_OBJECT
+class SerialPort : public QObject {
+  Q_OBJECT
 
 public:
-//    Q_PROPERTY(QString serialport_message READ readFromSerialPort NOTIFY newSerialPortData)
-    Q_PROPERTY(QString velocity READ readFromSerialPort NOTIFY newSerialPortData)
+  //    Q_PROPERTY(QString serialport_message READ readFromSerialPort NOTIFY
+  //    newSerialPortData)
+  Q_PROPERTY(QString velocity READ readFromSerialPort NOTIFY newSerialPortData)
+  Q_PROPERTY(QString lights READ readFromSerialPort NOTIFY newSerialPortData)
 
-    explicit SerialPort(QObject *parent = nullptr);
-    void connectToSerialPort();
+  explicit SerialPort(QObject *parent = nullptr);
+  void connectToSerialPort();
 
 public slots:
-    QString readFromSerialPort();
+  int readFromSerialPort();
 
 signals:
-    void newSerialPortData();
+  void newSerialPortData();
 
 private:
-    QString ecm_com_port;
-    QSerialPort *serialport_device;
-    QString serialport_message;
-    QString velocity;
-    int position;
+  QString ecm_com_port;
+  QSerialPort *serialport_device;
+  QString serialport_message;
+  double velocity;
+  double lights;
+  int position;
 };
 
 #endif // SERIALPORT_H
